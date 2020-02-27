@@ -4,8 +4,8 @@
 
 function threeLargestNumbers(array){
 	let largest = [null, null, null];
-	for(el in array){
-		update(largest, el);
+	for(let i=0; i<array.length; i++){
+		update(largest, array[i]);
 	}
 	return largest
 }
