@@ -3,31 +3,27 @@
 // Space - O(1)
 
 function threeLargestNumbers(array){
+	console.log(array)
 	let largest = [null, null, null];
 	for(let i=0; i<array.length; i++){
 		update(largest, array[i]);
 	}
 	return largest
+
 }
 
 function update(largest, el){
 	if(largest[2] == null || largest[2] <= el){
-		shiftAndUpdate(largest, el, 2)
+		largest[0] = largest[1];
+		largest[1] = largest[2];
+		largest[2] = el;
 	}
 	else if(largest[1] == null || largest[1] <= el){
-		shiftAndUpdate(largest, el, 1)
+		largest[0] = largest[1];
+		largest[1] = el;
 	}
 	else if(largest[0] == null || largest[0] <= el){
-		shiftAndUpdate(largest, el, 0)
+		largest[0] = el;
 	}
 }
-
-function shiftAndUpdate(largest, el, index){
-	// to do
-}
-
-console.log(threeLargestNumbers[32,5,343,3454,34,4232,23,32])
-
-
-
 
